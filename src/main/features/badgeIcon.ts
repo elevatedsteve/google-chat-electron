@@ -1,4 +1,5 @@
 import {ipcMain, app, nativeImage, BrowserWindow, Tray} from 'electron';
+import log from "electron-log";
 import path from 'path';
 import {is} from "electron-util";
 
@@ -8,10 +9,10 @@ type IconTypes = 'offline' | 'normal' | 'badge';
 const decideIcon = (href: string): IconTypes => {
   let type: IconTypes = 'offline';
 
-  if (href.match(/favicon_chat_r2/) ||
-    href.match(/favicon_chat_new_non_notif_r2/)) {
+  if (href.match(/favicon_chat_r3/) ||
+    href.match(/favicon_chat_new_non_notif_r3/)) {
     type = 'normal';
-  } else if (href.match(/favicon_chat_new_notif_r2/)) {
+  } else if (href.match(/favicon_chat_new_notif_r3/)) {
     type = 'badge';
   }
 
