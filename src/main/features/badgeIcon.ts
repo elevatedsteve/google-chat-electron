@@ -8,11 +8,12 @@ type IconTypes = 'offline' | 'normal' | 'badge';
 // Decide app icon based on favicon URL
 const decideIcon = (href: string): IconTypes => {
   let type: IconTypes = 'offline';
-
-  if (href.match(/favicon_chat_r3/) ||
-    href.match(/favicon_chat_new_non_notif_r3/)) {
+  debugger;
+  log.debug("icon = "+href);
+  if (href.match(/favicon_chat_r/) ||
+    href.match(/favicon_chat_new_non_notif_r/)) {
     type = 'normal';
-  } else if (href.match(/favicon_chat_new_notif_r3/)) {
+  } else if (href.match(/favicon_chat_new_notif_r/)) {
     type = 'badge';
   }
 
